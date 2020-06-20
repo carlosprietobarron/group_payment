@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'user/show', as: 'user_profile'
   get 'welcome/index'
   devise_for :users
   resources :transactions

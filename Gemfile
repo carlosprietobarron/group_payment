@@ -72,3 +72,5 @@ gem 'webdrivers', '~> 4.3'
 gem 'hirb'
 
 gem 'faker' 
+
+gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'

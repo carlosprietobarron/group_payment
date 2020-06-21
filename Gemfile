@@ -73,4 +73,8 @@ gem 'hirb'
 
 gem 'faker' 
 
-gem 'bootstrap-sass', '~> 3.4', '>= 3.4.1'
+gem 'sprockets-rails', '~> 3.2'
+
+gem 'bootstrap', '~> 4.5'
+
+gem 'jquery-rails'

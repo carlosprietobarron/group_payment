@@ -1,0 +1,16 @@
+@import "bootstrap";
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.link_button {
+    border: thick;
+    background-color: red;
+    color: white;
+}
+
+.link_button:hover {
+    color: #242020;
+    background-color: #e36060;
+}

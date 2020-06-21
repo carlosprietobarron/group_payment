@@ -1,18 +1,3 @@
 // Place all the styles related to the User controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.container{
-    display: flex;
-    flex-direction: column;
-}
-
-.link_button{
-    border: thick;
-    background-color: red;
-    color: white;
-}
-
-.link_button:hover {
-    color: #242020;
-    background-color: #e36060;
-}

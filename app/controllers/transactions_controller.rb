@@ -14,7 +14,8 @@ class TransactionsController < ApplicationController
 
   # GET /transactions/new
   def new
-    @transaction = Transaction.new
+    @transaction = current_user.transactions.new
+    @groups = Group.all
   end
 
   # GET /transactions/1/edit

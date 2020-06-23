@@ -3,6 +3,13 @@ Rails.application.routes.draw do
   get 'welcome/index'
   devise_for :users
   resources :transactions
+
+  get 'transaction/new/:group_id', to: 'transactions#new_with_group', as: 'new_with_group'
+  
+  get 'transaction/user', to: 'transactions#index_by_user', as: 'index_by_user'
+
+  get 'transaction/group/:group_id', to: 'transactions#index_by_group', as: 'index_by_group'
+
   resources :groups
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'welcome#index'

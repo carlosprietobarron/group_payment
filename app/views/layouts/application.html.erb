@@ -16,7 +16,9 @@
     <% if alert %>
       <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-    <%= render 'layouts/navbar' %>
-    <%= yield %>
+    <div class="jumbotron-fluid jumbotronTransp jumbotron-primary">
+      <%= render 'layouts/navbar' %>
+      <%= yield %>
+    </div>
   </body>
 </html>

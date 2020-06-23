@@ -1,0 +1,15 @@
+ <div class="card card-transaction">
+    <div class="card-horizontal d-flex flex-row">
+        <div class="img-wrapper">
+          <%if !transaction.group.nil? %>
+            <%= image_tag  "#{transaction.group.icon}", class:"circle-img"%>
+          <%end%>
+            
+        </div>
+        <div class="card-body">
+            <h5><%= transaction.name %></h5>
+            <span><%= transaction.description %></span>
+            <span><%= "$ #{transaction.amount}" %></span>
+        </div>
+    </div>
+</div>

@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
+      <th>Group</th>
       <th>Name</th>
       <th>Description</th>
-      <th>Price</th>
-      <th>Price</th>
+      <th>Amount</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +16,14 @@
   <tbody>
     <% @transactions.each do |transaction| %>
       <tr>
+        <td>
+          <%if !transaction.group.nil? %>
+            <%= image_tag  "#{transaction.group.icon}"%>
+          <%end%>
+        </td>
         <td><%= transaction.name %></td>
         <td><%= transaction.description %></td>
-        <td><%= transaction.price %></td>
-        <td><%= transaction.price %></td>
+        <td><%= transaction.amount %></td>
         <td><%= link_to 'Show', transaction %></td>
         <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
         <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -30,4 +34,4 @@
 
 <br>
 
-<%= link_to 'New Transaction', new_transaction_path %>
+<%= link_to 'New Transaction', new_transaction_path, class: "fake-button fixed-bottom" %>

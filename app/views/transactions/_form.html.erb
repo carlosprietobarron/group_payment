@@ -13,30 +13,33 @@
 
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-input" %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, class: "form-input" %>
   </div>
-
-  <div class="field">
-    <%= form.label :price %>
-    <%= form.text_field :price %>
-  </div>
-
+  
   <div class="field">
     <%= form.label :amount %>
-    <%= form.text_field :amount %>
+    <%= form.text_field :amount, class: "form-input" %>
   </div>
-
+  
+  <%if !@groups.nil?%>
   <fieldset>
+    <div class="form-radio-btn-item">
     <% @groups.each do |group|%>
-      <%=form.radio_button :group_id, group.id%>
-      <label for = "<%group.id%>" ><%= image_tag  "#{group.icon}" %> </label>
+      <div class="card-body-rad form-inline card-radio-btn">
+        <%=form.radio_button :group_id, group.id %>
+        <label for = "<%group.id%>" class: "card-radio-btn-item"> &nbsp<%= image_tag  "#{group.icon}", class: "card-img" %>&nbsp&nbsp<%= group.name %> </label>
+      </div>
     <%end%>
+    </div>
   </fieldset>
+  <%else%>
+    <%= form.hidden_field :group_id, value: @transaction.group_id %>
+  <%end%>
 
   <div class="actions">
     <%= form.submit %>

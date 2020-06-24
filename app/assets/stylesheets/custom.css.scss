@@ -10,6 +10,13 @@ body {
     flex-direction: column;
 }
 
+.total-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+}
+
 .vertical_user_card {
     display: flex;
     flex-direction: column;

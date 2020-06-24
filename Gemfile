@@ -56,10 +56,11 @@ end
 group :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '>= 2.15'
-  gem 'rspec'
-  gem 'selenium-webdriver'
+  #gem 'rspec-rails'
+  #gem 'webdrivers'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -73,7 +74,7 @@ gem 'hirb'
 
 gem 'faker' 
 
-gem 'sprockets-rails', '~> 3.2'
+#gem 'sprockets-rails', '~> 3.2'
 
 gem 'bootstrap', '~> 4.5'
 

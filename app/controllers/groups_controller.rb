@@ -7,7 +7,8 @@ class GroupsController < ApplicationController
 
   # GET /groups/1
   # GET /groups/1.json
-  def show end
+  def show 
+  end
 
   # GET /groups/new
   def new
@@ -15,7 +16,8 @@ class GroupsController < ApplicationController
   end
 
   # GET /groups/1/edit
-  def edit end
+  def edit 
+  end
 
   # POST /groups
   # POST /groups.json

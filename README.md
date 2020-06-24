@@ -1,11 +1,14 @@
-# Scaffold for social media app with Ruby on Rails
+# Transaction expenses tracking by categories
 
-> This repo includes intial code for social media app with basic styling. Its purpose is to be a starting point for Microverse students.
+> This application helps you to keep tracking of all your expenses
+allowing you to keep control by categories to help to create
+detailled budgetes
 
 ## Built With
 
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
+- Postgress
 
 ## Live Demo
 
@@ -18,7 +21,7 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-Ruby: 2.6.3
+Ruby: 2.7
 Rails: 5.2.3
 Postgres: >=9.5
 
@@ -62,11 +65,6 @@ Open `http://localhost:3000/` in your browser.
 TBA
 
 ## Authors
-
-👤 **Johann Rodríguez**
-- Github: [@JohannRodriguez](https://github.com/JohannRodriguez)
-- Twitter: [@BSapce](https://https://twitter.com/BSapce)
-- Linkedin: [Johann Rodríguez](https://www.linkedin.com/in/johann-alonso-rodr%C3%ADguez-v%C3%A1zquez-25b07719a/)
 
 👤 **Carlos Prieto**
 - Github: [@carlosprietobarron](https://github.com/carlosprietobarron)

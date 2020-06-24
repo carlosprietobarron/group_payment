@@ -9,7 +9,7 @@ class TransactionsController < ApplicationController
 
   def index_by_user
     #@transactions = current_user.transactions.includes(:group)
-    @transactions = Transaction.where(user_id: current_user.id).where.not(group_id: nil)
+    @transactions = Transaction.where(user_id: current_user.id).where.not(group_id: nil).includes(:group)
     @total = @transactions.sum(:amount)
   end
 

@@ -1,5 +1,12 @@
-<h1><%=current_user.email%></h1>
 <div class="container-fluid container-custom" id="profile_links">
+  <div class="vertical_user_card">
+    <div class="avatar-wrapper">
+      <%= image_tag  "#{current_user.avatar}" %>
+    </div>
+    <div class="nombre_user">
+      <%=current_user.name%>
+    </div>
+  </div>
     <%= link_to  "My Transactions", index_by_user_path, :class => "link_button"%>
     <%= link_to  "My External Transactions", transactions_path, :class => "link_button"%>
     <%= link_to  "All groups",  groups_path, :class => "link_button"%>

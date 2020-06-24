@@ -4,6 +4,8 @@
 allowing you to keep control by categories to help to create
 detailled budgetes
 
+![screenshot](./screenshot.png)
+
 ## Built With
 
 - Ruby v2.7.0

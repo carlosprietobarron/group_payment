@@ -1,16 +1,13 @@
 class GroupsController < ApplicationController
-  before_action :set_group, only: [:show, :edit, :update, :destroy]
+  before_action :set_group, only: %i[show edit update destroy]
 
-  # GET /groups
-  # GET /groups.json
   def index
     @groups = Group.all
   end
 
   # GET /groups/1
   # GET /groups/1.json
-  def show
-  end
+  def show end
 
   # GET /groups/new
   def new
@@ -18,13 +15,11 @@ class GroupsController < ApplicationController
   end
 
   # GET /groups/1/edit
-  def edit
-  end
+  def edit end
 
   # POST /groups
   # POST /groups.json
   def create
-    #@group = Group.new(group_params)
     @group = current_user.groups.new(group_params)
     
     respond_to do |format|

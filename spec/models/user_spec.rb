@@ -34,14 +34,14 @@ describe User, type: :model do
 
   describe 'A user can create many groups and transactions' do
     subject(:user) { User.new }
-    it "expect to return a new group with groups.new" do
-      group=user.groups.new
+    it 'expect to return a new group with groups.new' do
+      group = user.groups.new
       expect(group).to be_a_new(Group)
     end
-    
-    it "expect to return a new transaction with transactions.new" do
-        trans=user.transactions.new
+
+    it 'expect to return a new transaction with transactions.new' do
+        trans = user.transactions.new
         expect(trans).to be_a_new(Transaction)
-      end 
+    end
   end
 end

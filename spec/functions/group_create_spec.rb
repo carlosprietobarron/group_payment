@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Transactions cycle:' do
+RSpec.describe 'group cycle:' do
   before :each do
     @user = User.create!(name: 'username', email: 'username@gmail.com', \
                          password: 'secret', password_confirmation: 'secret')
@@ -13,13 +13,11 @@ RSpec.describe 'Transactions cycle:' do
     fill_in 'Email', with: 'username@gmail.com'
     fill_in 'Password', with: 'secret'
     click_on 'Log in'
-    visit '/transactions/new'
-    fill_in 'Name', with: 'a new transsaction'
-    fill_in 'Amount', with: 15
-    groupid = "transaction_group_id_#{@group.id}"
-    page.choose groupid
-    click_on 'Create Transaction'
-    visit '/transaction/user'
-    expect(page).to have_content('a new transsaction')
+    visit '/groups/new'
+    fill_in 'Name', with: 'Novogroup'
+    page.choose 'group_icon_iconscarpng'
+    click_on 'Create Group'
+    visit '/groups'
+    expect(page).to have_content('Novogroup')
   end
 end

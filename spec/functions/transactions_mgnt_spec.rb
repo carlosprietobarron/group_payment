@@ -30,7 +30,7 @@ RSpec.describe 'Transactions cycle:' do
     click_on 'Log in'
     visit '/transactions/new'
     fill_in 'Name', with: 'a new transsaction'
-    fill_in 'Amount', with: "non numeric"
+    fill_in 'Amount', with: 'non numeric'
     groupid = "transaction_group_id_#{@group.id}"
     page.choose groupid
     click_on 'Create Transaction'

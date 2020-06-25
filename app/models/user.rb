@@ -17,5 +17,4 @@ class User < ApplicationRecord
   def ungrouped_trans
     transactions.map { |transaction| transaction if transaction.group.nil? }.compact
   end
-  
 end

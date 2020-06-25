@@ -10,7 +10,7 @@ class TransactionsController < ApplicationController
 
   def index_by_user
     @transactions = current_user.transactions.where.not(group_id: nil).includes(:group)
-    @total = @transactions.inject(0){|sum, t| sum + t.amount}
+    @total = @transactions.inject(0) { |sum, t| sum + t.amount }
   end
 
   def index_by_group
@@ -36,7 +36,9 @@ class TransactionsController < ApplicationController
 
   def create
     @transaction = Transaction.new(transaction_params)
+    # rubocop:disable Style/NumericPredicate
     @transaction.group_id = nil if @transaction.group_id == 0
+    # rubocop:enable Style/NumericPredicate
     @transaction.user_id = current_user.id if @transaction.user_id.nil?
     respond_to do |format|
       if @transaction.save

@@ -41,6 +41,7 @@ class TransactionsController < ApplicationController
   # POST /transactions.json
   def create
     @transaction = Transaction.new(transaction_params)
+    @transaction.group_id = nil if @transaction.group_id == 0
     @transaction.user_id = current_user.id if @transaction.user_id.nil?
     respond_to do |format|
       if @transaction.save

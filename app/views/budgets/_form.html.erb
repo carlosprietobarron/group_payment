@@ -1,0 +1,37 @@
+<%= form_with(model: budget, local: true) do |form| %>
+  <% if budget.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(budget.errors.count, "error") %> prohibited this transaction from being saved:</h2>
+
+      <ul>
+      <% transaction.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ 
+  <div class="field">
+    <%= form.label :budget %>
+    <%= form.text_field :budget, class: "form-input" %>
+  </div>
+  
+  <%if !@groups.nil?%>
+  <fieldset>
+    <div class="form-radio-btn-item">
+    <% @groups.each do |group|%>
+      <div class="card-body-rad form-inline card-radio-btn">
+        <%=form.radio_button :group_id, group.id %>
+        <label for = "<%group.id%>" class: "card-radio-btn-item"> &nbsp<%= image_tag  "#{group.icon}", class: "card-img" %>&nbsp&nbsp<%= group.name %> </label>
+      </div>
+    <%end%>
+    </div>
+  </fieldset>
+  <%else%>
+    <%= form.hidden_field :group_id, value: @budget.group_id %>
+  <%end%>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

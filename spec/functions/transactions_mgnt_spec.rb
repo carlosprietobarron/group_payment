@@ -22,4 +22,18 @@ RSpec.describe 'Transactions cycle:' do
     visit '/transaction/user'
     expect(page).to have_content('a new transsaction')
   end
+
+  it 'can not create non numeric transactions' do
+    visit '/users/sign_in'
+    fill_in 'Email', with: 'username@gmail.com'
+    fill_in 'Password', with: 'secret'
+    click_on 'Log in'
+    visit '/transactions/new'
+    fill_in 'Name', with: 'a new transsaction'
+    fill_in 'Amount', with: "non numeric"
+    groupid = "transaction_group_id_#{@group.id}"
+    page.choose groupid
+    click_on 'Create Transaction'
+    expect(page).to have_content('New Transaction')
+  end
 end

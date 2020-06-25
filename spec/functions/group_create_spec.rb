@@ -8,7 +8,7 @@ RSpec.describe 'group cycle:' do
     @trans = @user.transactions.create!(name: 'transaction_tst', amount: 5, user_id: @user.id, group_id: @group.id)
   end
 
-  it 'creates a grouped transaction' do
+  it 'creates a valid group' do
     visit '/users/sign_in'
     fill_in 'Email', with: 'username@gmail.com'
     fill_in 'Password', with: 'secret'
@@ -19,5 +19,27 @@ RSpec.describe 'group cycle:' do
     click_on 'Create Group'
     visit '/groups'
     expect(page).to have_content('Novogroup')
+  end
+
+  it 'requieres an icon' do
+    visit '/users/sign_in'
+    fill_in 'Email', with: 'username@gmail.com'
+    fill_in 'Password', with: 'secret'
+    click_on 'Log in'
+    visit '/groups/new'
+    fill_in 'Name', with: 'Othergroup'
+    click_on 'Create Group'
+    expect(page).to have_css('#error_explanation')
+  end
+
+  it 'requieres an name' do
+    visit '/users/sign_in'
+    fill_in 'Email', with: 'username@gmail.com'
+    fill_in 'Password', with: 'secret'
+    click_on 'Log in'
+    visit '/groups/new'
+    page.choose 'group_icon_iconscarpng'
+    click_on 'Create Group'
+    expect(page).to have_css('#error_explanation')
   end
 end

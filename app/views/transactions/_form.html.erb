@@ -29,6 +29,10 @@
   <%if !@groups.nil?%>
   <fieldset>
     <div class="form-radio-btn-item">
+    <div class="card-body-rad form-inline card-radio-btn">
+        <%=form.radio_button :group_id, 0 %>
+        <label for = "0" class: "card-radio-btn-item"> NO GROUP </label>
+    </div>
     <% @groups.each do |group|%>
       <div class="card-body-rad form-inline card-radio-btn">
         <%=form.radio_button :group_id, group.id %>

@@ -18,4 +18,14 @@ RSpec.describe Transaction, type: :model do
     trans = Transaction.new(name: 'sometran', user_id: user.id )
     expect(trans.valid?).to be(false)
   end
+
+  it 'is not valid with negative amount' do 
+    trans = Transaction.new(name: 'sometran', amount: -1 ,user_id: user.id )
+    expect(trans.valid?).to be(false)
+  end
+
+  it 'is not valid with non numeric amount' do 
+    trans = Transaction.new(name: 'sometran', amount: "no numeric" ,user_id: user.id )
+    expect(trans.valid?).to be(false)
+  end
 end

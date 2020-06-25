@@ -40,8 +40,8 @@ describe User, type: :model do
     end
 
     it 'expect to return a new transaction with transactions.new' do
-        trans = user.transactions.new
-        expect(trans).to be_a_new(Transaction)
+      trans = user.transactions.new
+      expect(trans).to be_a_new(Transaction)
     end
   end
 end

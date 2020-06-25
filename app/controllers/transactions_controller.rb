@@ -4,13 +4,13 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.json
   def index
-    @transactions = Transaction.all.where(group: nil).includes(:user).includes(:group)
+    @transactions = current_user.transactions.where(group_id: nil).includes(:group)
     @total = @transactions.sum(:amount)
   end
 
   def index_by_user
-    @transactions = Transaction.where(user_id: current_user.id).where.not(group_id: nil).includes(:group)
-    @total = @transactions.sum(:amount)
+    @transactions = current_user.transactions.where.not(group_id: nil).includes(:group)
+    @total = @transactions.inject(0){|sum, t| sum + t.amount}
   end
 
   def index_by_group
@@ -45,10 +45,8 @@ class TransactionsController < ApplicationController
     respond_to do |format|
       if @transaction.save
         format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
-        format.json { render :show, status: :created, location: @transaction }
       else
         format.html { render :new }
-        format.json { render json: @transaction.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -59,10 +57,8 @@ class TransactionsController < ApplicationController
     respond_to do |format|
       if @transaction.update(transaction_params)
         format.html { redirect_to @transaction, notice: 'Transaction was successfully updated.' }
-        format.json { render :show, status: :ok, location: @transaction }
       else
         format.html { render :edit }
-        format.json { render json: @transaction.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -73,7 +69,6 @@ class TransactionsController < ApplicationController
     @transaction.destroy
     respond_to do |format|
       format.html { redirect_to transactions_url, notice: 'Transaction was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

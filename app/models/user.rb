@@ -9,4 +9,13 @@ class User < ApplicationRecord
 
   has_many :transactions
   has_many :groups
+
+  def grouped_trans
+    transactions.map { |transaction| transaction unless transaction.group.nil? }.compact
+  end
+
+  def ungrouped_trans
+    transactions.map { |transaction| transaction if transaction.group.nil? }.compact
+  end
+  
 end

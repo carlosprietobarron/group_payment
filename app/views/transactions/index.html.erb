@@ -27,7 +27,6 @@
         <td><%= transaction.name %></td>
         <td><%= transaction.description %></td>
         <td><%= transaction.amount %></td>
-        <td><%= link_to 'Show', transaction %></td>
         <td><%= edit_btn(transaction.user_id, transaction.id) %></td>
         <td><%= delete_btn(transaction.user_id, transaction.id)%></td>
       </tr>

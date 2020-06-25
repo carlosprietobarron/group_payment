@@ -34,11 +34,6 @@ class TransactionsController < ApplicationController
     @transaction = @group.transactions.new
   end
 
-  # GET /transactions/1/edit
-  def edit; end
-
-  # POST /transactions
-  # POST /transactions.json
   def create
     @transaction = Transaction.new(transaction_params)
     @transaction.group_id = nil if @transaction.group_id == 0

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'user/show', as: 'user_profile'
   get 'welcome/index'
   devise_for :users
-  resources :transactions
+  resources :transactions, except: %i[show]
 
   get 'transaction/new/:group_id', to: 'transactions#new_with_group', as: 'new_with_group'
   

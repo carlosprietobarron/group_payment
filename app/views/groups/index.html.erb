@@ -16,7 +16,7 @@
       <tr>
         <td><%= image_tag  "#{group.icon}" %></td>
         <td><%= group.name %></td>
-        <td><%= link_to 'Show', group %></td>
+        <td><%= link_to 'Show', "groups/#{group.id }"%></td>
         <td><%= link_to 'Destroy', group, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

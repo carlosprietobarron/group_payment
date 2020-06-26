@@ -11,17 +11,11 @@
 
 <div class="container" id="transactions">
 
-  <%@group.transactions.each do |transaction|%>
+  <%@transactions.each do |transaction|%>
         <%= render "transaction_card", transaction: transaction %>
         <td><%= link_to 'Show', transaction %></td>
         <td><%= edit_btn(transaction.user_id,transaction.id) %></td>
         <td><%= delete_btn(transaction.user_id,transaction.id)%></td>
-        <%
-=begin%>
- <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
-        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
-<%
-=end%>
     </tr>
   <%end%>
   </tbody>

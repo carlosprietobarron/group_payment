@@ -4,7 +4,7 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.json
   def index
-    @transactions = current_user.transactions.where(group_id: nil).includes(:group)
+    @transactions = current_user.transactions.where(group_id: nil) #.includes(:group)
     @total = @transactions.sum(:amount)
   end
 
@@ -19,14 +19,10 @@ class TransactionsController < ApplicationController
     @total = @transactions.sum(:amount)
   end
 
-  # GET /transactions/1
-  # GET /transactions/1.json
-  def show; end
-
   # GET /transactions/new
   def new
     @transaction = current_user.transactions.new
-    @groups = Group.all
+    @groups = Group.all.includes(:user)
   end
 
   def new_with_group
@@ -42,7 +38,7 @@ class TransactionsController < ApplicationController
     @transaction.user_id = current_user.id if @transaction.user_id.nil?
     respond_to do |format|
       if @transaction.save
-        format.html { redirect_to @transaction, notice: 'Transaction was successfully created.' }
+        format.html { redirect_to '/transaction/user' , notice: 'Transaction was successfully created.' }
       else
         format.html { render :new }
       end

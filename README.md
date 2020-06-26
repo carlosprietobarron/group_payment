@@ -1,9 +1,6 @@
 # Transaction expenses tracking by categories
 
-> This application helps you to keep tracking of all your transaction's expenses
-allowing you to keep control by transactions categories to help to create detailled 
-budgetes, and allows you to create all the groups you may need to have a more exact 
-account of which aspects of your daily living or project are costing more.
+> This application helps you to keep tracking of all your transaction's expenses allowing you to keep control by transaction categories to help to create detailed budgets, and allows you to create all the groups you may need to have a more exact account of which aspects of your daily living or project are costing more.
 
 ![screenshot](./screenshot.png)
 
@@ -12,6 +9,7 @@ account of which aspects of your daily living or project are costing more.
 - Ruby v2.7.0
 - Ruby on Rails v5.2.4
 - Postgress
+- Bootstrap 4.5
 
 ## Live Demo
 

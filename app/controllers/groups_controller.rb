@@ -8,8 +8,8 @@ class GroupsController < ApplicationController
   # GET /groups/1
   # GET /groups/1.json
   def show
-      @group = Group.find(params[:id])
-      @transactions = @group.transactions.all
+    @group = Group.find(params[:id])
+    @transactions = @group.transactions.all
   end
 
   # GET /groups/new

@@ -4,7 +4,7 @@ class TransactionsController < ApplicationController
   # GET /transactions
   # GET /transactions.json
   def index
-    @transactions = current_user.transactions.where(group_id: nil) #.includes(:group)
+    @transactions = current_user.transactions.where(group_id: nil).includes(:group)
     @total = @transactions.sum(:amount)
   end
 

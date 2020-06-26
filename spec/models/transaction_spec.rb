@@ -29,7 +29,7 @@ RSpec.describe Transaction, type: :model do
     expect(trans.valid?).to be(false)
   end
 
-  describe "Associations" do
+  describe 'Associations' do
     it { should belong_to(:user) }
     it { is_expected.to belong_to(:group).optional(true) }
   end

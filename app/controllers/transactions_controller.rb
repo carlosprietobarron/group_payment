@@ -38,7 +38,7 @@ class TransactionsController < ApplicationController
     @transaction.user_id = current_user.id if @transaction.user_id.nil?
     respond_to do |format|
       if @transaction.save
-        format.html { redirect_to '/transaction/user' , notice: 'Transaction was successfully created.' }
+        format.html { redirect_to '/transaction/user', notice: 'Transaction was successfully created.' }
       else
         format.html { render :new }
       end

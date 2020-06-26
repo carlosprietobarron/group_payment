@@ -24,4 +24,14 @@ RSpec.describe Group, type: :model do
       expect(trans).to be_a_new(Transaction)
     end
   end
+
+  describe 'Associations' do
+    context 'belongs to user' do
+      it { should belong_to(:user) }
+    end
+
+    context 'Having many transactions' do
+      it { should have_many(:transactions) }
+    end
+  end
 end

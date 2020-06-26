@@ -28,4 +28,9 @@ RSpec.describe Transaction, type: :model do
     trans = Transaction.new(name: 'sometran', amount: 'no numeric', user_id: user.id)
     expect(trans.valid?).to be(false)
   end
+
+    describe "Associations" do
+      it { should belong_to(:user) }
+      it { is_expected.to belong_to(:group).optional(true) }
+    end
 end

@@ -44,4 +44,13 @@ describe User, type: :model do
       expect(trans).to be_a_new(Transaction)
     end
   end
+  describe 'Associations' do
+    context 'Having many transactions' do
+      it { should have_many(:transactions) }
+    end
+
+    context 'Having many groups' do
+      it { should have_many(:groups) }
+    end
+  end
 end

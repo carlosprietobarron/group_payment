@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
+  post '/friendships/update/:id', to: 'friendships#update', as: 'friend'
+  post '/friendships/create/:id', to: 'friendships#create', as: 'create_friend'
+  
   get 'user/show', as: 'user_profile'
+  get 'user/index', to: 'user#index', as: 'friends_list'
+  get 'user/profile/:id', to: 'user#profile', as: 'friend_profile'
+
   get 'home/index'
   devise_for :users
   resources :transactions, except: %i[show]

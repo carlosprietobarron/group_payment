@@ -1,0 +1,8 @@
+<section class="user-section">
+  <p><%= friendship_helper %></p>
+  <h2><%= "Name: #{@user.name}" %></h2>
+  <%= image_tag  "#{@user.avatar}", class: "friend-avatar"%>
+  <article class="timeline">
+    <%= current_user.total_transaction(@user.id) if current_user.friend?(@user) %>    
+  </article>
+</section>

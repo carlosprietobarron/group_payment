@@ -18,9 +18,7 @@
     <% @transactions.each do |transaction| %>
       <tr>
         <td>
-          <%if !transaction.group.nil? %>
-            <%= image_tag  "#{transaction.group.icon}"%>
-          <%end%>
+          <%= get_icon(transaction) %>
         </td>
         <td><%= transaction.name %></td>
         <td><%= transaction.description %></td>

@@ -40,7 +40,7 @@ class TransactionsController < ApplicationController
       if @transaction.save
         format.html { redirect_to '/transaction/user', notice: 'Transaction was successfully created.' }
       else
-        format.html { render :new }
+        format.html { redirect_to '/transaction/user', alert: 'Error in the transaction creation.' }
       end
     end
   end

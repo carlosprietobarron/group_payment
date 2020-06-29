@@ -12,7 +12,7 @@ RSpec.describe FriendshipsController, type: :controller do
     sign_in(requestor)
     friend = User.create(name: 'friend', email: 'friend@gmail.com', password: '1234567', password_confirmation: '1234567')
     post :create, :params => { :id => friend.id }
-    expect(response).to redirect_to user_path(friend.id)
+    expect(response).to redirect_to friend_profile_path(friend.id)
   end
 
   it 'should confirm a requested friendship' do
@@ -22,7 +22,7 @@ RSpec.describe FriendshipsController, type: :controller do
     sign_out(requestor)
     sign_in(receiver)
     post :update, :params => { :id => requestor.id }
-    expect(response).to redirect_to user_path(requestor.id)
+    expect(response).to redirect_to friend_profile_path(requestor.id)
   end
   # rubocop:enable Layout/LineLength:
   # rubocop:enable Style/HashSyntax

@@ -29,7 +29,7 @@ RSpec.describe 'group cycle:' do
     visit '/groups/new'
     fill_in 'Name', with: 'Othergroup'
     click_on 'Create Group'
-    expect(page).to have_css('#error_explanation')
+    expect(page).to have_css('.field_with_errors')
   end
 
   it 'requieres an name' do
@@ -40,6 +40,6 @@ RSpec.describe 'group cycle:' do
     visit '/groups/new'
     page.choose 'group_icon_iconscarpng'
     click_on 'Create Group'
-    expect(page).to have_css('#error_explanation')
+    expect(page).to have_css('.field_with_errors')
   end
 end

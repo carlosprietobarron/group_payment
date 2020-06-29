@@ -34,6 +34,6 @@ RSpec.describe 'Transactions cycle:' do
     groupid = "transaction_group_id_#{@group.id}"
     page.choose groupid
     click_on 'Create Transaction'
-    expect(page).to have_content('New Transaction')
+    expect(page).to have_content('Error in the transaction creation.')
   end
 end

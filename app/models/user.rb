@@ -25,13 +25,15 @@ class User < ApplicationRecord
   end
 
   has_many :friendships
-  has_many :inverse_friendships, :class_name => 'Friendship', :foreign_key => 'friend_id'
-  has_many :friends, through: :friendships, :class_name => 'User', :foreign_key => 'user_id'
+  has_many :inverse_friendships, class_name: 'Friendship', foreign_key: 'friend_id'
+  has_many :friends, through: :friendships, class_name: 'User', foreign_key: 'user_id'
 
   def friends
+    # rubocop:disable Lint/Void
     friends_array = friendships.map { |friendship| friendship.friend if friendship.confirmed }
     friends_array + inverse_friendships.map { |friendship| friendship.user if friendship.confirmed }
     friends_array.compact
+    # rubocop:enable Lint/Void
   end
 
   def pending_friends

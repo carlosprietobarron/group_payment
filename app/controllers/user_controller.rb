@@ -4,7 +4,7 @@ class UserController < ApplicationController
   end
 
   def index
-    @users=User.all
+    @users = User.all
   end
 
   def profile

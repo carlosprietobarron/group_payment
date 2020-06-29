@@ -52,5 +52,9 @@ describe User, type: :model do
     context 'Having many groups' do
       it { should have_many(:groups) }
     end
+
+    context 'Having many friends' do
+      it { should have_many(:friends) }
+    end
   end
 end

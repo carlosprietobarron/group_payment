@@ -26,7 +26,7 @@ class TransactionsController < ApplicationController
   end
 
   def new_with_group
-    @group = Group.find(params[:group_id])
+    set_group
     @transaction = @group.transactions.new
   end
 
@@ -67,6 +67,10 @@ class TransactionsController < ApplicationController
   end
 
   private
+
+  def set_group
+    @group = Group.find(params[:group_id])
+  end
 
   # Use callbacks to share common setup or constraints between actions.
   def set_transaction

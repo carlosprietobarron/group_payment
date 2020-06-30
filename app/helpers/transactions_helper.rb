@@ -4,9 +4,7 @@ module TransactionsHelper
   end
 
   def get_icon(transaction)
-    if !transaction.group.nil? 
-      image_tag  "#{transaction.group.icon}"
-    end
+    image_tag transaction.group.icon.to_s unless transaction.group.nil?
   end
 
   # rubocop:disable Layout/LineLength

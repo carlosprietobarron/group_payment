@@ -2,7 +2,13 @@
 
 > This application helps you to keep tracking of all your transaction's expenses allowing you to keep control by transaction categories to help to create detailed budgets, and allows you to create all the groups you may need to have a more exact account of which aspects of your daily living or project are costing more.
 
+![screenshot](./screenshot2.png)
+
 ![screenshot](./screenshot.png)
+
+![screenshot](./screenshot3.png)
+
+![screenshot](./screenshot4.png)
 
 ## Built With
 

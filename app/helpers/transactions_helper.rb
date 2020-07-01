@@ -6,8 +6,6 @@ module TransactionsHelper
   def get_icon(transaction)
     image_tag transaction.group.icon.to_s unless transaction.group.nil?
   end
-  
-
 
   # rubocop:disable Layout/LineLength
   def delete_btn(author, trans_id)

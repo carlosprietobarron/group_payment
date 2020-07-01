@@ -23,7 +23,7 @@ class GroupsController < ApplicationController
   # POST /groups.json
   def create
     @group = current_user.groups.new(group_params)
-
+    @group.icon = params[:icon]
     respond_to do |format|
       if @group.save
         format.html { redirect_to @group, notice: 'Group was successfully created.' }

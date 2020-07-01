@@ -4,22 +4,33 @@
     <%= form.label :name %>
     <%= form.text_field :name, class: "form-input"  %>
   </div>
-  <%icons = {"car" => "icons/car.png", \
+  <%
+=begin%>
+ <%icons = {"car" => "icons/car.png", \
              "travel" => "icons/case.png", \
              "clothes" => "icons/clothes.png", \
              "grocery" => "icons/grocery.png", \
              "home" => "icons/home.png", \
              "office" => "icons/office.png", \
-             "transport" => "icons/transport.png"}%>
+             "transport" => "icons/transport.png"}%> 
+<%
+=end%>
   <fieldset>
-  <div class="form-radio-btn-item">
+  
+  <%= select_icon %>
+
+  <%
+=begin%>
+ <div class="form-radio-btn-item">
     <% icons.each do |icon|%>
     <div class="card-body-rad form-inline card-radio-btn">
       <%=form.radio_button :icon, icon[1]%>
       <label for = "<%icon[0]%>" ><%= image_tag  "#{icon[1]}" %> </label>
     </div>
     <%end%>
-  </div>
+  </div> 
+<%
+=end%>
   </fieldset>
 
   <div class="actions">

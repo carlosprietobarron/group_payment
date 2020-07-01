@@ -88,7 +88,12 @@ When user clicks "New Group" or "New transactions".
 
 ### Deployment
 
-TBA
+- Open a terminal (on linux or Mac OS)
+- Using Git, clone this repository
+- On the terminal, run bundle to install necesary gems
+- Run the command: rails db:migrate to create database
+- Run rails server, to start the web server
+- Go to root path of local server.
 
 ## Authors
 

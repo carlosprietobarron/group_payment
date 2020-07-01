@@ -103,9 +103,11 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-TBA
+- [Microverse](https://github.com/carlosprietobarron)
+
+- [Gregoire Vella on Behance](https://www.behance.net/gregoirevella)
 
 ## 📝 License
 
-TBA
+- This project is [MIT](https://github.com/Elbie-em/Expenses-Tracker-App/blob/development/LICENSE) licensed.
 

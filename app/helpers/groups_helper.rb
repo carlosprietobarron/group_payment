@@ -24,19 +24,21 @@ module GroupsHelper
       "office" => "icons/office.png", \
       "transport" => "icons/transport.png"}
 
-    @content = content_tag(:span, '')
+    @content = content_tag(:span, "")
+    
     icons.each do |icon|
       @content.concat(
         content_tag(:div, class: "form-radio-btn-item") do
             concat(
               content_tag(:div, class: "card-body-rad form-inline card-radio-btn") do
                 radio_button_tag(:icon, icon[1])+ " " +
-                image_tag("#{icon[1]}")
+                image_tag("#{icon[1]}", class: "card-img")
               end
             )
           end
-      ) #content.tag
-    end  
+      ) #content.concat
+    end
+   
     @content
   end
 end

@@ -15,7 +15,7 @@ RSpec.describe 'group cycle:' do
     click_on 'Log in'
     visit '/groups/new'
     fill_in 'Name', with: 'Novogroup'
-    page.choose 'group_icon_iconscarpng'
+    page.choose 'icon_icons_car.png'
     click_on 'Create Group'
     visit '/groups'
     expect(page).to have_content('Novogroup')
@@ -29,7 +29,7 @@ RSpec.describe 'group cycle:' do
     visit '/groups/new'
     fill_in 'Name', with: 'Othergroup'
     click_on 'Create Group'
-    expect(page).to have_css('.field_with_errors')
+    expect(page).to have_content('Error please fill all fields')
   end
 
   it 'requieres an name' do
@@ -38,8 +38,8 @@ RSpec.describe 'group cycle:' do
     fill_in 'Password', with: 'secret'
     click_on 'Log in'
     visit '/groups/new'
-    page.choose 'group_icon_iconscarpng'
+    page.choose 'icon_icons_car.png'
     click_on 'Create Group'
-    expect(page).to have_css('.field_with_errors')
+    expect(page).to have_content('Error please fill all fields')
   end
 end

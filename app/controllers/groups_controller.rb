@@ -28,7 +28,7 @@ class GroupsController < ApplicationController
       if @group.save
         format.html { redirect_to @group, notice: 'Group was successfully created.' }
       else
-        format.html { render :new }
+        format.html { redirect_to @group, notice: 'Error please fill all fields' }
       end
     end
   end

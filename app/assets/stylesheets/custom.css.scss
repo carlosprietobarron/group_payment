@@ -1,0 +1,113 @@
+@import "bootstrap";
+body {
+    position: relative;
+    background-color: #1883d2;
+    background-image: linear-gradient(#0c6fb6, #1897f1);
+}
+
+.notice_wrapper {
+    position: relative;
+    background-color: rgba(161, 241, 129, 0.726);
+}
+
+.container-custom {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.total-container {
+    display: flex;
+    top: 50px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: right;
+}
+
+.vertical_user_card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link_button {
+    border: thick;
+    color: white;
+    background-color: #1885d203;
+    color: white;
+}
+
+.link_button:hover {
+    color: #242020;
+    background-image: linear-gradient(#0c6fb6, #1897f1);
+}
+
+a {
+    color: white;
+}
+
+a:visited {
+    color: rgb(250, 248, 248) !important;
+}
+
+.card-horizontal-rad {
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    float: left;
+    max-width: 500px;
+}
+
+.card-body-rad {
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    padding-left: 0;
+}
+
+.circle-img {
+    width: 50px;
+    position: relative;
+    top: -5;
+}
+
+.card-img {
+    width: 30px;
+    position: relative;
+}
+
+.jumbotronTransp {
+    background-color: #1883d2;
+    background-image: linear-gradient(#0c6fb6, #1897f1);
+    padding: 30px;
+    margin-bottom: 30px;
+    font-size: 21px;
+    font-weight: 200;
+    line-height: 2.1428571435;
+    color: inherit;
+}
+
+card-radio-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: safe;
+    padding-left: 0px !important;
+}
+
+.form-radio-btn-item {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 5px;
+}
+
+.form-input {
+    width: 100%;
+}
+
+.fake-button {
+    background-color: rgb(103, 230, 166);
+    width: 100%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}

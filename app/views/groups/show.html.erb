@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= image_tag  "#{@group.icon}" %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @group.name %>
+</p>
+
+<div class="container" id="transactions">
+
+  <%@transactions.each do |transaction|%>
+        <%= render "transaction_card", transaction: transaction %>
+        <td><%= link_to 'Show', transaction %></td>
+        <td><%= edit_btn(transaction.user_id,transaction.id) %></td>
+        <td><%= delete_btn(transaction.user_id,transaction.id)%></td>
+    </tr>
+  <%end%>
+  </tbody>
+</table>  
+</div>
+
+<%= link_to 'New Transaction', new_with_group_path(@group.id), class: "fake-button fixed-bottom" %> 
+<%= link_to 'Back', groups_path %>

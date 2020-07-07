@@ -1,0 +1,18 @@
+<div class="total-container">
+  <div class="wrapper">Transactions</div>
+  <div class="wrapper">Total $ <span><%=@total%></span></div>
+</div>
+
+    <% @transactions.each do |transaction| %>
+        <%= render "transaction_card", transaction: transaction %>
+        <td><%= link_to 'Edit', edit_transaction_path(transaction) %></td>
+        <td><%= link_to 'Destroy', transaction, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class='fake-button'>
+  <%= link_to 'New Transaction', new_transaction_path %>
+</div>

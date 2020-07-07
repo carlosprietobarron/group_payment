@@ -1,0 +1,18 @@
+// Place all the styles related to the User controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.profile-link {
+    font-size: 0.8em;
+    margin: 0 0 8px 0;
+    color: rgba(0, 5, 14, 0.842);
+    background-image: linear-gradient(#0c6fb6, #1897f1);
+}
+
+.container-profiles {
+    display: flex;
+    margin-top: 7px;
+}
+
+.friend-avatar {
+    width: 30px;
+}

@@ -1,0 +1,17 @@
+<%= form_with(model: group, local: true) do |form| %>
+  
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name, class: "form-input"  %>
+  </div>
+
+  <fieldset>
+  <div class="form-radio-btn-item">
+    <%= select_icon %>
+  </div>
+  </fieldset>
+
+  <div class="actions">
+    <%= form.submit class: "form-input"  %>
+  </div>
+<% end %>

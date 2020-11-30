@@ -99,8 +99,8 @@ When user clicks "New Group" or "New transactions".
 
 👤 **Carlos Prieto**
 - Github: [@carlosprietobarron](https://github.com/carlosprietobarron)
-- Linkedin: [Carlos Prieto](https://www.linkedin.com/in/carlos-prieto-41a2b018b/)
-- Email: [Carlos Prieto Barrón](carloprietobarron@gmail.com)
+- Linkedin: [Carlos Prieto](https://www.linkedin.com/in/carlosprietobarron/)
+- Email: [Carlos Prieto Barrón](carloprietobarron@outlook.com)
 
 ## 🤝 Contributing
 
